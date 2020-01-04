@@ -1,0 +1,19 @@
+<nav class="navbar">
+
+    <div class="container">
+      <div class="ui-g">
+        <div class="ui-g-12">
+          <a href="javascript:;" class="navbar-toggle" (click)="exibindoMenu = !exibindoMenu">
+            <!--<i class="fa fa-bars"></i>-->
+            <mat-icon>menu</mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <ul class="navbar-menu" [hidden]="!exibindoMenu">
+      <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/users" (click)="exibindoMenu = !exibindoMenu">Pesquisar Usuários</a></li>
+      <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/users/new" (click)="exibindoMenu = !exibindoMenu">Cadastrar Usuários</a></li>
+    </ul>
+
+  </nav>

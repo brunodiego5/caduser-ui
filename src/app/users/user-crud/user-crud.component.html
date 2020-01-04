@@ -1,0 +1,37 @@
+<div class="container"> 
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="save(f)">
+
+      <div class="row">
+        <div class="col-12">
+          <h1>{{ editing ? 'Edição de' : 'Novo' }} Usuário</h1>
+        </div>
+
+        <div> <!--class="example-container"-->
+            <div class="col-12"> <!-- container-fluid"-->
+                <mat-form-field> <!--class="example-full-width"-->
+                    <input matInput type="text" name="name"
+                        [(ngModel)]="user.name"
+                        #name="ngModel" required minlength="5"
+                        placeholder="Nome">
+                </mat-form-field>          
+            </div>
+
+            <div class="col-12"> <!-- container-fluid"-->
+                <mat-form-field> <!--class="example-full-width"-->
+                    <input matInput  type="text" name="email"
+                        [(ngModel)]="user.email"
+                        #email="ngModel" required minlength="5"
+                        placeholder="Email" email> 
+                </mat-form-field>  
+            </div>        
+        </div>
+        <div class="col-12"> 
+          <button mat-flat-button color="primary" [disabled]="f.invalid">Salvar</button>
+          <button mat-flat-button color="primary" (click)="newUser(f)">Novo</button>
+
+          <a routerLink="/users">Voltar para a pesquisa</a>
+        </div>
+      </div>
+
+    </form>
+  </div>
